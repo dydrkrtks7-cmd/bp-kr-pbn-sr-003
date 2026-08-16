@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · kr-pbn-sr-003</title>
+  <meta name="description" content="kr-pbn-sr-003에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://gangnam-night-hot.node-link.shop/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ *, *::before, *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+ html {
+ scroll-behavior: smooth;
+ }
+ body {
+ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+ background: #1a1a1a;
+ color: #e5e5e5;
+ line-height: 1.4;
+ font-weight: 400;
+ min-height: 100vh;
+ overflow-x: hidden;
+ }
+ h1, h2, h3, h4, h5, h6 {
+ font-family: 'Impact', 'Arial Black', 'Franklin Gothic Bold', system-ui, sans-serif;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ font-weight: 900;
+ }
+ a {
+ color: #ff6b35;
+ text-decoration: underline solid 3px;
+ text-underline-offset: 4px;
+ transition: none;
+ }
+ a:hover {
+ color: #e5e5e5;
+ background: #ff6b35;
+ }
+ img, svg, video {
+ display: block;
+ max-width: 100%;
+ }
+ .container {
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 0 48px;
+ }
+ @media (max-width: 768px) {
+ .container {
+ padding: 0 24px;
+ }
+ }
+
+ /* Brutalist raw textures */
+ body::before {
+ content: '';
+ position: fixed;
+ top: 0; left: 0; width: 100%; height: 100%;
+ background: repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,107,53,0.02) 30px, rgba(255,107,53,0.02) 31px);
+ pointer-events: none;
+ z-index: 9999;
+ }
+
+ /* HEADER */
+ header {
+ border-bottom: 4px solid #ff6b35;
+ padding: 24px 48px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: #1a1a1a;
+ position: relative;
+ z-index: 100;
+ }
+ .logo {
+ font-size: 1.8rem;
+ font-family: Impact, 'Arial Black', sans-serif;
+ color: #e5e5e5;
+ text-transform: uppercase;
+ letter-spacing: -0.03em;
+ line-height: 1;
+ border-left: 6px solid #ff6b35;
+ padding-left: 16px;
+ transform: skewX(-5deg);
+ }
+ .logo span {
+ color: #ff6b35;
+ }
+ nav {
+ display: flex;
+ gap: 32px;
+ align-items: center;
+ }
+ nav a {
+ font-family: Impact, 'Arial Black', sans-serif;
+ text-transform: uppercase;
+ font-size: 1.1rem;
+ color: #e5e5e5;
+ text-decoration: none;
+ border: 3px solid transparent;
+ padding: 8px 16px;
+ transition: 0s;
+ letter-spacing: 0.04em;
+ }
+ nav a:hover {
+ border-color: #ff6b35;
+ background: transparent;
+ color: #ff6b35;
+ }
+ .menu-toggle {
+ display: none;
+ background: none;
+ border: 3px solid #e5e5e5;
+ color: #e5e5e5;
+ font-size: 2rem;
+ padding: 8px 16px;
+ cursor: pointer;
+ font-family: Impact, sans-serif;
+ }
+ .menu-toggle:active {
+ background: #ff6b35;
+ border-color: #ff6b35;
+ color: #1a1a1a;
+ }
+ @media (max-width: 768px) {
+ header {
+ padding: 16px 24px;
+ flex-wrap: wrap;
+ }
+ nav {
+ display: none;
+ width: 100%;
+ flex-direction: column;
+ gap: 8px;
+ padding: 24px 0;
+ border-top: 3px solid #ff6b35;
+ margin-top: 16px;
+ }
+ nav.open {
+ display: flex;
+ }
+ nav a {
+ width: 100%;
+ text-align: center;
+ border: 3px solid #333;
+ padding: 12px;
+ font-size: 1.4rem;
+ }
+ .menu-toggle {
+ display: block;
+ }
+ }
+
+ /* HERO */
+ .hero {
+ position: relative;
+ padding: 80px 48px;
+ border-bottom: 4px solid #ff6b35;
+ background: #1a1a1a;
+ overflow: hidden;
+ }
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: -60px; right: -60px;
+ width: 400px; height: 400px;
+ background: repeating-linear-gradient(45deg, #ff6b35 0px, #ff6b35 8px, #1a1a1a 8px, #1a1a1a 16px);
+ transform: rotate(15deg) skewX(-10deg);
+ opacity: 0.3;
+ z-index: 0;
+ }
+ .hero-content {
+ position: relative;
+ z-index: 1;
+ max-width: 800px;
+ }
+ .hero h1 {
+ font-size: 5rem;
+ line-height: 0.9;
+ color: #e5e5e5;
+ margin-bottom: 24px;
+ text-shadow: 8px 8px 0 #ff6b35;
+ transform: skewX(-6deg);
+ word-break: break-word;
+ }
+ .hero p {
+ font-size: 1.6rem;
+ font-weight: 700;
+ color: #ff6b35;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ margin-bottom: 32px;
+ border-left: 6px solid #e5e5e5;
+ padding-left: 24px;
+ }
+ .hero .cta {
+ display: inline-block;
+ background: #ff6b35;
+ color: #1a1a1a;
+ font-family: Impact, sans-serif;
+ font-size: 2rem;
+ padding: 16px 48px;
+ text-decoration: none;
+ border: 4px solid #e5e5e5;
+ transform: rotate(-2deg);
+ text-transform: uppercase;
+ letter-spacing: 0.04em;
+ transition: 0s;
+ }
+ .hero .cta:hover {
+ background: #e5e5e5;
+ border-color: #ff6b35;
+ color: #1a1a1a;
+ transform: rotate(0deg) scale(1.02);
+ }
+ @media (max-width: 768px) {
+ .hero {
+ padding: 48px 24px;
+ }
+ .hero h1 {
+ font-size: 3rem;
+ text-shadow: 4px 4px 0 #ff6b35;
+ }
+ .hero p {
+ font-size: 1.2rem;
+ }
+ .hero .cta {
+ font-size: 1.4rem;
+ padding: 12px 32px;
+ }
+ }
+
+ /* SECTION general */
+ section {
+ padding: 80px 0;
+ border-bottom: 4px solid #ff6b35;
+ }
+ .section-title {
+ font-size: 3.5rem;
+ color: #ff6b35;
+ margin-bottom: 48px;
+ border-bottom: 6px solid #e5e5e5;
+ padding-bottom: 16px;
+ display: inline-block;
+ transform: skewX(-4deg);
+ }
+ @media (max-width: 768px) {
+ section {
+ padding: 48px 0;
+ }
+ .section-title {
+ font-size: 2.2rem;
+ }
+ }
+
+ /* REVIEW CARDS */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 32px;
+ }
+ .review-card {
+ background: #222;
+ border: 4px solid #333;
+ padding: 32px;
+ position: relative;
+ transform: rotate(var(--r, 0deg));
+ transition: 0s;
+ }
+ .review-card:nth-child(odd) {
+ --r: -1deg;
+ }
+ .review-card:nth-child(even) {
+ --r: 1.5deg;
+ }
+ .review-card:hover {
+ border-color: #ff6b35;
+ transform: rotate(0deg) scale(1.01);
+ }
+ .review-card .stars {
+ font-size: 1.8rem;
+ letter-spacing: 4px;
+ color: #ff6b35;
+ margin-bottom: 12px;
+ }
+ .review-card .meta {
+ display: flex;
+ justify-content: space-between;
+ font-size: 0.9rem;
+ color: #999;
+ text-transform: uppercase;
+ border-bottom: 3px solid #ff6b35;
+ padding-bottom: 12px;
+ margin-bottom: 16px;
+ font-weight: 700;
+ }
+ .review-card .nick {
+ font-family: Impact, sans-serif;
+ font-size: 1.2rem;
+ color: #e5e5e5;
+ }
+ .review-card .date {
+ color: #888;
+ }
+ .review-card .content {
+ font-size: 1.1rem;
+ line-height: 1.5;
+ color: #ccc;
+ border-left: 4px solid #ff6b35;
+ padding-left: 16px;
+ margin-top: 8px;
+ }
+ .review-card .badge {
+ position: absolute;
+ top: -12px; right: 16px;
+ background: #ff6b35;
+ color: #1a1a1a;
+ font-family: Impact, sans-serif;
+ padding: 4px 16px;
+ font-size: 0.9rem;
+ border: 3px solid #e5e5e5;
+ transform: rotate(3deg);
+ }
+ @media (max-width: 768px) {
+ .review-grid {
+ grid-template-columns: 1fr;
+ }
+ .review-card {
+ transform: none !important;
+ }
+ }
+
+ /* INFO SECTION */
+ .info-block {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ align-items: start;
+ }
+ .info-block .left {
+ background: #222;
+ border: 4px solid #ff6b35;
+ padding: 48px 32px;
+ transform: skewX(-2deg);
+ }
+ .info-block .left h3 {
+ font-size: 2.5rem;
+ color: #ff6b35;
+ margin-bottom: 24px;
+ }
+ .info-block .left ul {
+ list-style: none;
+ }
+ .info-block .left ul li {
+ padding: 12px 0;
+ border-bottom: 3px solid #333;
+ font-size: 1.2rem;
+ font-weight: 700;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ }
+ .info-block .left ul li::before {
+ content: '▸';
+ color: #ff6b35;
+ font-size: 1.6rem;
+ }
+ .info-block .right {
+ background: #111;
+ border: 4px solid #e5e5e5;
+ padding: 48px 32px;
+ transform: skewX(2deg);
+ }
+ .info-block .right h3 {
+ font-size: 2.5rem;
+ color: #e5e5e5;
+ margin-bottom: 24px;
+ }
+ .info-block .right p {
+ font-size: 1.2rem;
+ line-height: 1.6;
+ color: #bbb;
+ }
+ .info-block .right .phone-big {
+ display: inline-block;
+ margin-top: 24px;
+ background: #ff6b35;
+ color: #1a1a1a;
+ font-family: Impact, sans-serif;
+ font-size: 2.4rem;
+ padding: 16px 32px;
+ border: 4px solid #e5e5e5;
+ text-decoration: none;
+ transform: rotate(-1deg);
+ }
+ .info-block .right .phone-big:hover {
+ background: #e5e5e5;
+ border-color: #ff6b35;
+ color: #1a1a1a;
+ }
+ @media (max-width: 768px) {
+ .info-block {
+ grid-template-columns: 1fr;
+ gap: 32px;
+ }
+ .info-block .left, .info-block .right {
+ transform: none;
+ }
+ }
+
+ /* FOOTER */
+ footer {
+ border-top: 6px solid #ff6b35;
+ padding: 48px;
+ background: #111;
+ text-align: center;
+ }
+ footer p {
+ font-size: 1rem;
+ color: #888;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ font-weight: 700;
+ }
+ footer a {
+ color: #ff6b35;
+ }
+ footer .footer-links {
+ display: flex;
+ justify-content: center;
+ gap: 32px;
+ margin-bottom: 24px;
+ flex-wrap: wrap;
+ }
+ footer .footer-links a {
+ font-family: Impact, sans-serif;
+ font-size: 1.1rem;
+ text-decoration: none;
+ border: 3px solid #333;
+ padding: 8px 24px;
+ }
+ footer .footer-links a:hover {
+ border-color: #ff6b35;
+ background: #ff6b35;
+ color: #1a1a1a;
+ }
+
+ /* MISC */
+ .phone-sticky {
+ position: fixed;
+ bottom: 32px; right: 32px;
+ z-index: 999;
+ background: #ff6b35;
+ color: #1a1a1a;
+ font-family: Impact, sans-serif;
+ font-size: 1.4rem;
+ padding: 16px 32px;
+ border: 4px solid #e5e5e5;
+ text-decoration: none;
+ transform: rotate(3deg);
+ box-shadow: 8px 8px 0 #1a1a1a;
+ transition: 0s;
+ }
+ .phone-sticky:hover {
+ background: #e5e5e5;
+ border-color: #ff6b35;
+ transform: rotate(0deg) scale(1.05);
+ }
+ @media (max-width: 768px) {
+ .phone-sticky {
+ bottom: 16px; right: 16px;
+ font-size: 1rem;
+ padding: 12px 20px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · kr-pbn-sr-003">
+  <meta property="og:description" content="kr-pbn-sr-003에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://gangnam-night-hot.node-link.shop/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="logo">강남<span>유흥</span></div>
+ <nav id="mainNav">
+ <a href="#reviews">후기</a>
+ <a href="#info">정보</a>
+ 
+ </nav>
+ <button class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0102.html">강남 유흥 솔직후기 비교로 분석한 연남 유흥 추천정보와 가격 기준</a>
+        <p class="post-item__summary">온라인에 넘쳐나는 강남 유흥 솔직후기 글들은 때로 혼란을 가중시키기도 합니다. 연남동 지역의 분위기는 기존의 대형 유흥가와는 다른 독자적인 생태계를 형성하고 있어, 이를 해석하는 기준 또한 달라야 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0103.html">강남 유흥 솔직후기 속 실패 패턴으로 보는 마곡 가라오케 추천정보 예약법</a>
+        <p class="post-item__summary">강남 유흥 솔직후기 사례를 분석해보면 대다수 방문객이 비슷한 지점에서 실패를 경험합니다. 특히 마곡 지역의 가라오케를 예약할 때도 이러한 실패 지점을 사전에 인지하고 있으면 훨씬 안전한 여정을 계획</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0104.html">강남 유흥 솔직후기 점검리스트를 활용한 마곡 유흥 추천정보와 접근성 분석</a>
+        <p class="post-item__summary">성공적인 유흥 시간을 보내기 위해서는 체계적인 체크리스트가 필요합니다. 강남 유흥 솔직후기 데이터를 기반으로 마곡 지역의 환경을 평가해 보면, 접근성과 위치적 이점이 상당히 중요하다는 점을 알 수 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0105.html">강남 유흥 솔직후기 비교를 통해 살펴보는 합정 노래방 추천정보 가이드</a>
+        <p class="post-item__summary">낯선 지역에서 즐거운 시간을 보내려 할 때 경험하게 되는 강남 유흥 솔직후기 등의 정보는 때때로 혼란을 줍니다. 특히 노래방과 같은 시설을 방문할 때는 시설의 위생 상태나 방음 수준을 미리 파악하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0106.html">강남 유흥 솔직후기 정보의 오해와 연남 클럽 추천정보 선택 기준</a>
+        <p class="post-item__summary">일반적으로 강남 유흥 솔직후기 등을 보고 나면 모든 유흥 문화가 획일적일 것이라 오해하기 쉽습니다. 그러나 연남과 같이 특색 있는 지역의 클럽은 각기 다른 음악적 취향과 분위기를 지향하고 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0107.html">강남 유흥 솔직후기 기반 합정 셔츠룸 추천정보 및 구성원 필수 수칙</a>
+        <p class="post-item__summary">합정에서 특정 업소를 선택할 때 만족도를 결정짓는 조건은 인원 구성과 방문 목적의 명확성입니다. 강남 유흥 솔직후기 데이터를 살펴보면 많은 이들이 혼란을 겪는 지점이 바로 규모와 분위기의 부조화입니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0108.html">강남 유흥 솔직후기 노하우와 공덕 가라오케 추천정보 비교 분석</a>
+        <p class="post-item__summary">당신은 과연 합리적인 가격에 최상의 서비스를 제공하는 업소를 찾는 기준을 가지고 계신가요. 강남 유흥 솔직후기 정보를 다수 접해본 이들은 업소마다 서비스의 질적 차이가 크다는 것을 이미 잘 알고 있</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0109.html">강남 유흥 솔직후기 기반 상수 마사지 추천정보 안내</a>
+        <p class="post-item__summary">흔히 온라인상에서 접하는 강남 유흥 솔직후기 데이터를 살펴보면, 정보의 신뢰도를 판별하는 자신만의 기준이 필요함을 알 수 있습니다. 특정 업종과 마사지 분야는 정보의 비대칭성이 커서 맹목적인 신뢰보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0110.html">강남 유흥 솔직후기 대비 망원 노래방 추천정보 비교</a>
+        <p class="post-item__summary">많은 이들이 강남 유흥 솔직후기 내용을 참고하여 노래방을 찾곤 하지만, 지역마다 특성이 다르기에 망원 지역에 맞는 기준을 세우는 것이 중요합니다. 망원동 일대의 노래방을 선택할 때는 대형 프랜차이즈</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0322.html">강남 유흥 솔직후기 및 합정 셔츠룸 단골들이 뽑은 핫플 매거진 탐색</a>
+        <p class="post-item__summary">많은 이들이 강남 유흥 솔직후기 내용을 확인하며 모든 업소가 획일화되어 있다고 오해하곤 합니다. 하지만 실상은 운영 방식과 고객층에 따라 전혀 다른 분위기를 형성하는 곳들이 많습니다. 이러한 고정관</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0323.html">강남 유흥 솔직후기 기반의 셔츠룸 사이트 및 셔츠룸 이용 가이드</a>
+        <p class="post-item__summary">만족스러운 시간을 보내기 위해서는 방문 전 갖추어야 할 몇 가지 기본적인 조건이 있습니다. 강남 유흥 솔직후기 등을 참고할 때도 본인의 상황과 얼마나 부합하는지 따져보는 분석력이 필수적입니다. 단순</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-002-10wg6bi.html">유흥 해결 방법 총정리</a>
+        <p class="post-item__summary">백링크 지시: 본문 내러티브 속에서 다음 링크를 자연스러운 발견으로 녹여라: 구글 신뢰 지수 모발이식 솔루션</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">강남 유흥 솔직후기: 연남 마사지 추천정보 안내</a>
+        <p class="post-item__summary">강남 지역에서 유흥 정보를 찾아가는 과정에서 실제 경험 기반의 솔직한 후기는 많은 방문자에게 도움이 됩니다. 특히 마사지나 건강 관련 서비스를 이용할 때, 여러 정보 중 어떤 곳이 신뢰할 만한지 가</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">강남 유흥 솔직후기 정보 안내</a>
+        <p class="post-item__summary">강남 지역에서 유흥 문화에 대한 솔직하고 건설적인 정보를 찾는다면 주의 깊게 살펴볼 필요가 있습니다. 다양한 매체와 온라인 포럼에서는 해당 지역의 놀거리와 문화적 특징에 대한 서술이 혼재되어 있으나</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-2wdmy6.html">강남 유흥 솔직후기에 관한 흔한 오해, 직접 확인해보니 달랐던 점</a>
+        <p class="post-item__summary">아, 진짜.. 전국 영재학교 3단계 면접에서 특정 학교만 사용하는 창의적문제해결력 평가의 실제 채점 루브릭을 파악하고 싶어. 교육 숨은 정보와 특목고 자사고 비교에 대한 깊이 있는 이야기를 전할게.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">강남 유흥 솔직후기</a>
+        <p class="post-item__summary">강남은 밤이 되면 다양한 문화와 엔터테인먼트 시설로 유명합니다. 유흥을 즐기는 방법을 알아보기 전에는 지역마다 분위기가 다르다는 것을 이해하는 것이 중요하며, 이는 방문 목적에 따라 선택할 수 있는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">강남 유흥 솔직후기</a>
+        <p class="post-item__summary">강남 지역의 유흥 문화를 찾아다니는 과정에서 많은 분들이 방문하려는 곳의 분위기와 서비스 품질에 대한 객관적인 정보를 찾고 계십니다. 이러한 맥락에서 단순히 장소의 외관이나 내부 인테리어만을 평가하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">강남 유흥 솔직후기</a>
+        <p class="post-item__summary">강남 지역의 유흥 문화는 다양한 장르의 나이트클럽부터 바, 라운지까지 폭넓게 펼쳐져 있다. 밤이 깊어질수록 거리는 더욱 생동감 넘치며, 각 시설은 독특한 테마와 분위기를 자랑한다. 방문자는 자신의 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
